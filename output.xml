@@ -1,43 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 3.2.1 (Python 3.9.2 on win32)" generated="20210322 17:31:47.215" rpa="false">
-<suite id="s1" name="Robot Day1" source="C:\Git folder\TestJenkins3\robot_day1.robot">
-<test id="s1-t1" name="Search on the google">
-<kw name="Open Browser" library="Selenium2Library">
-<doc>Opens a new browser instance to the optional ``url``.</doc>
+<robot generator="Robot 3.2.1 (Python 3.9.2 on win32)" generated="20210322 17:35:44.353" rpa="false">
+<suite id="s1" name="Testjenkins3" source="C:\Git folder\TestJenkins3\testjenkins3.robot">
+<test id="s1-t1" name="Test 1234">
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
 <arguments>
-<arg>https://www.google.com</arg>
-<arg>Chrome</arg>
+<arg>1</arg>
+<arg>1</arg>
 </arguments>
-<msg timestamp="20210322 17:31:47.508" level="INFO">Opening browser 'Chrome' to base url 'https://www.google.com'.</msg>
-<status status="PASS" starttime="20210322 17:31:47.508" endtime="20210322 17:31:49.572"></status>
+<status status="PASS" starttime="20210322 17:35:44.643" endtime="20210322 17:35:44.643"></status>
 </kw>
-<kw name="Maximize Browser Window" library="Selenium2Library">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20210322 17:31:49.573" endtime="20210322 17:31:49.704"></status>
-</kw>
-<kw name="Input Text" library="Selenium2Library">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>//input[@class="gLFyf gsfi"]</arg>
-<arg>facebook</arg>
-</arguments>
-<msg timestamp="20210322 17:31:49.705" level="INFO">Typing text 'facebook' into text field '//input[@class="gLFyf gsfi"]'.</msg>
-<status status="PASS" starttime="20210322 17:31:49.705" endtime="20210322 17:31:49.803"></status>
-</kw>
-<kw name="Press Keys" library="Selenium2Library">
-<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<arguments>
-<arg>//input[@class="gLFyf gsfi"]</arg>
-<arg>ENTER</arg>
-</arguments>
-<msg timestamp="20210322 17:31:49.803" level="INFO">Sending key(s) ('ENTER',) to //input[@class="gLFyf gsfi"] element.</msg>
-<msg timestamp="20210322 17:31:50.097" level="INFO">Pressing special key ENTER to element.</msg>
-<msg timestamp="20210322 17:31:50.097" level="INFO">Releasing special key ENTER.</msg>
-<status status="PASS" starttime="20210322 17:31:49.803" endtime="20210322 17:31:51.241"></status>
-</kw>
-<status status="PASS" starttime="20210322 17:31:47.507" endtime="20210322 17:31:51.241" critical="yes"></status>
+<status status="PASS" starttime="20210322 17:35:44.642" endtime="20210322 17:35:44.645" critical="yes"></status>
 </test>
-<status status="PASS" starttime="20210322 17:31:47.216" endtime="20210322 17:31:51.243"></status>
+<status status="PASS" starttime="20210322 17:35:44.354" endtime="20210322 17:35:44.646"></status>
 </suite>
 <statistics>
 <total>
@@ -47,7 +22,7 @@
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" id="s1" name="Robot Day1">Robot Day1</stat>
+<stat pass="1" fail="0" id="s1" name="Testjenkins3">Testjenkins3</stat>
 </suite>
 </statistics>
 <errors>

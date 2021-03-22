@@ -10,7 +10,7 @@ Library    RequestsLibrary
 *** Test Cases ***
 
 Test 1234
-     Should Be Equial    1      1
+     Should Be Equal    1      1
     # Create Session      google             http://www.google.com
     # ${resp_google}=     GET On Session     google             /           expected_status=200
     # log to console      ${resp_google} 
