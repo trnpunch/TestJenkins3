@@ -1,0 +1,19 @@
+{
+    "and": [
+        {
+            "equals": {
+                "path": "/v1/general/member/validate/1000000000000000",
+                "method": "GET"
+            }
+        },
+        {
+            "exists": {
+                "headers": {
+                    "Host": true,
+                    "X-Amz-Date": true,
+                    "Authorization": true
+                }
+            }
+        }
+    ]
+}

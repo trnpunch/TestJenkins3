@@ -1,0 +1,28 @@
+{
+    "and": [
+        {
+            "matches": {
+                "path": "/latte/v1/get-clubcard-by-phone",
+                "method": "GET"
+            }
+        },
+        {
+            "or": [
+                {
+                    "deepEquals": {
+                        "query": {
+                            "phone": "66650000003"
+                        }
+                    }
+                },
+                {
+                    "deepEquals": {
+                        "query": {
+                            "phone": "601117000002"
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+}

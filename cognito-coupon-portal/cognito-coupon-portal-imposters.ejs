@@ -1,0 +1,18 @@
+{
+    "port": "4009",
+    "protocol": "http",
+    "name": "cognito-coupon-portal",
+    "stubs": [
+        {
+            "predicates": [ <% include get-service-token/success/success_scope_campaigns_predicates.ejs %> ],
+            "responses": [ <% include get-service-token/success/success_scope_campaigns_response.ejs %> ]
+        },
+        {
+            "predicates": [ <% include get-service-token/fail/internal_server_error_predicates.ejs %> ],
+            "responses": [ <% include get-service-token/fail/internal_server_error_response.ejs %> ]
+        },
+        {
+            "responses": [ <% include cognito-coupon-portal-proxy.ejs %> ]
+        }
+    ]
+}

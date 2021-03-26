@@ -1,0 +1,28 @@
+{
+  "and": [
+        {
+            "equals": {
+                "path": "/messaging-api/auth/v1/send-otp",
+                "method": "POST"
+            }
+        },
+        {
+            "not": {
+                "matches": {
+                    "body": {
+                        "app_client_id": "internal_error"
+                    }
+                }
+            }
+        }, 
+        {
+            "not": {
+                "matches": {
+                    "body": {
+                        "mobile_number": "66970217192|66804265968|66840065523|66814362332|66646585777|66982711233|66838172206|66959219283|66630077365"
+                    }
+                }
+            }
+        }
+    ]
+}

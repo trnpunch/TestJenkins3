@@ -1,0 +1,28 @@
+{
+    "and": [
+        {
+            "equals": {
+                "path": "/identity-api/auth/v1/otp/register-token",
+                "method": "POST"
+            }
+        },
+        {
+            "not": {
+                "matches": {
+                    "body": {
+                        "otp": "internal_error|otp_incorrect"
+                    }
+                }
+            }
+        }, 
+        {
+            "not": {
+                "matches": {
+                    "body": {
+                        "mobile_number": "66655194920|66970217192|66804265968|66840065523|66814362332|66646585777|66982711233|66838172206|66959219283|66630077365"
+                    }
+                }
+            }
+        }
+    ]
+}

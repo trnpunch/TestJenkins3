@@ -1,0 +1,37 @@
+{
+  "and": [
+        {
+            "equals": {
+                "path": "/messaging-api/auth/v1/verify-otp",
+                "method": "POST"
+            }
+        },
+        {
+            "not": {
+                "matches": {
+                    "body": {
+                        "ref_code": "otp_incorrect|otp_expired|internal_error|attempt_count_over_limits|data_not_found"
+                    }
+                }
+            }
+        },
+        {
+            "not": {
+                "matches": {
+                    "body": {
+                        "otp": "000000|000001|000002|000003"
+                    }
+                }
+            }
+        }, 
+        {
+            "not": {
+                "matches": {
+                    "body": {
+                        "mobile_number": "66970217192|66804265968|66840065523|66814362332|66646585777|66982711233|66838172206|66959219283|66630077365|66638136945"
+                    }
+                }
+            }
+        }
+    ]
+}

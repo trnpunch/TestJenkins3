@@ -1,0 +1,90 @@
+{
+    "port": "4011",
+    "protocol": "http",
+    "name": "airasia",
+    "stubs": [
+        {
+            "predicates": [ <% include validate-member/success/active-member-predicates.ejs %> ],
+            "responses": [ <% include validate-member/success/active-member-response.ejs %> ]
+        },
+        {
+            "predicates": [ <% include validate-member/success/closed-member-predicates.ejs %> ],
+            "responses": [ <% include validate-member/success/closed-member-response.ejs %> ]
+        },
+        {
+            "predicates": [ <% include validate-member/success/deactivated-member-predicates.ejs %> ],
+            "responses": [ <% include validate-member/success/deactivated-member-response.ejs %> ]
+        },
+        {
+            "predicates": [ <% include validate-member/success/issued-member-predicates.ejs %> ],
+            "responses": [ <% include validate-member/success/issued-member-response.ejs %> ]
+        },
+        {
+            "predicates": [ <% include validate-member/success/other-member-predicates.ejs %> ],
+            "responses": [ <% include validate-member/success/other-member-response.ejs %> ]
+        },
+        {
+            "predicates": [ <% include validate-member/success/suspended-member-predicates.ejs %> ],
+            "responses": [ <% include validate-member/success/suspended-member-response.ejs %> ]
+        },
+        {
+            "predicates": [ <% include validate-member/fail/member-not-found-predicates.ejs %> ],
+            "responses": [ <% include validate-member/fail/member-not-found-response.ejs %> ]
+        },
+        {
+            "predicates": [ <% include validate-member/fail/service-unavailable-predicates.ejs %> ],
+            "responses": [ <% include validate-member/fail/service-unavailable-response.ejs %> ]
+        },
+        {
+            "predicates": [ <% include validate-member/fail/gw-timeout-predicates.ejs %> ],
+            "responses": [ <% include validate-member/fail/gw-timeout-response.ejs %> ]
+        },
+        {
+            "predicates": [ <% include validate-member/fail/bad-request-predicates.ejs %> ],
+            "responses": [ <% include validate-member/fail/bad-request-response.ejs %> ]
+        },
+        {
+            "predicates": [ <% include validate-member/fail/unauthorized-predicates.ejs %> ],
+            "responses": [ <% include validate-member/fail/unauthorized-response.ejs %> ]
+        },
+        {
+            "predicates": [ <% include validate-member/fail/timeout-predicates.ejs %> ],
+            "responses": [ <% include validate-member/fail/timeout-response.ejs %> ]
+        },
+        {
+            "predicates": [ <% include earn-point/success/earn-point-member-predicates.ejs %> ],
+            "responses": [ <% include earn-point/success/earn-point-member-response.ejs %> ]
+        },
+        {
+            "predicates": [ <% include earn-point/fail/bad-request-predicates.ejs %> ],
+            "responses": [ <% include earn-point/fail/bad-request-response.ejs %> ]
+        },
+        {
+            "predicates": [ <% include earn-point/fail/gateway-timed-out-predicates.ejs %> ],
+            "responses": [ <% include earn-point/fail/gateway-timed-out-response.ejs %> ]
+        },
+        {
+            "predicates": [ <% include earn-point/fail/member-not-found-predicates.ejs %> ],
+            "responses": [ <% include earn-point/fail/member-not-found-response.ejs %> ]
+        },
+        {
+            "predicates": [ <% include earn-point/fail/partner-not-found-predicates.ejs %> ],
+            "responses": [ <% include earn-point/fail/partner-not-found-response.ejs %> ]
+        },
+        {
+            "predicates": [ <% include earn-point/fail/service-unavailable-predicates.ejs %> ],
+            "responses": [ <% include earn-point/fail/service-unavailable-response.ejs %> ]
+        },
+        {
+            "predicates": [ <% include earn-point/fail/unauthorized-predicates.ejs %> ],
+            "responses": [ <% include earn-point/fail/unauthorized-response.ejs %> ]
+        },
+        {
+            "predicates": [ <% include earn-point/fail/timeout-predicates.ejs %> ],
+            "responses": [ <% include earn-point/fail/timeout-response.ejs %> ]
+        },
+        {
+            "responses": [ <% include airasia-proxy.ejs %> ]
+        }
+    ]
+}

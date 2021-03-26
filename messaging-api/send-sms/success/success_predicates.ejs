@@ -1,0 +1,39 @@
+{
+    "and": [
+        {
+            "equals": {
+                "path": "/messaging-api/messaging/v1/send-sms",
+                "method": "POST"
+            }
+        },
+        {
+            "exists": {
+                "body": {
+                    "message_to_send": true
+                }
+            }
+        },
+        {
+            "or": [
+                {
+                    "not": {
+                        "matches": {
+                            "body": {
+                                "mobile_number": "66970217192|66804265968|66840065523|66814362332|66646585777|66982711233|66838172206|66959219283|66630077365|66nvalid|66nternal_error|66650000002"
+                            }
+                        }
+                    }
+                },
+                {
+                    "not": {
+                        "matches": {
+                            "body": {
+                                "mobile_number": "|601117000001|internal_error|invalid"
+                            }
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+}

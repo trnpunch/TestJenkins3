@@ -1,0 +1,17 @@
+{
+    "and":[
+       {
+            "equals":{
+                "path":"/v1/redemptions",
+                "method":"POST"
+            }
+       },
+       {
+          "matches":{
+             "body":{
+                "channel":"timeout"
+             }
+          }
+       }
+    ]
+ }

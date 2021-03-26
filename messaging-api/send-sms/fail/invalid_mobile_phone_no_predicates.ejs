@@ -1,0 +1,21 @@
+{
+    "and": [
+        {
+            "equals": {
+                "path": "/messaging-api/messaging/v1/send-sms",
+                "method": "POST"
+            }
+        },
+        {
+            "and": [
+                {
+                    "equals": {
+                        "body": {
+                            "mobile_number": "66nvalid|invalid"
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+}

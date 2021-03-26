@@ -1,0 +1,28 @@
+{
+    "and": [
+        {
+            "equals": {
+                "path": "/messaging-api/auth/v1/verify-otp",
+                "method": "POST"
+            }
+        },
+        {
+            "or": [
+                {
+                    "matches": {
+                        "body": {
+                            "ref_code": "attempt_count_over_limits"
+                        }
+                    }
+                },
+                {
+                    "matches": {
+                        "body": {
+                            "otp": "000003"
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+}

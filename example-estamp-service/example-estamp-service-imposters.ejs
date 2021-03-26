@@ -1,0 +1,22 @@
+{
+    "port": "4000",
+    "protocol": "http",
+    "name": "profiles",
+    "stubs": [
+        {
+            "predicates": [ <% include redemptions/success/success_predicates.ejs %> ],
+            "responses": [ <% include redemptions/success/success_response.ejs %> ]
+        },
+        {
+            "predicates": [ <% include redemptions/fail/invalid_params_400_predicates.ejs %> ],
+            "responses": [ <% include redemptions/fail/invalid_params_400_response.ejs %> ]
+        },
+        {
+            "predicates": [ <% include redemptions/fail/gw_timeout_504_predicates.ejs %> ],
+            "responses": [ <% include redemptions/fail/gw_timeout_504_response.ejs %> ]
+        },
+        {
+            "responses": [ <% include example-estamp-service-proxy.ejs %> ]
+        }
+    ]
+}

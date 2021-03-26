@@ -1,0 +1,17 @@
+{
+    "and": [
+        {
+            "equals": {
+                "path": "/identity-api/auth/v1/otp/verify-customer",
+                "method": "POST"
+            }
+        },
+        {
+            "matches": {
+                "body": {
+                    "mobile_number": ".*?"
+                }
+            }
+        }
+    ]
+}

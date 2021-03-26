@@ -1,0 +1,22 @@
+{
+    "port": "4007",
+    "protocol": "http",
+    "name": "cognito-lotuss",
+    "stubs": [
+        {
+            "predicates": [ <% include get-service-token/success/success_scope_forgot_cc_predicates.ejs %> ],
+            "responses": [ <% include get-service-token/success/success_scope_forgot_cc_response.ejs %> ]
+        },
+        {
+            "predicates": [ <% include get-service-token/success/success_scope_cc_registration_predicates.ejs %> ],
+            "responses": [ <% include get-service-token/success/success_scope_cc_registration_response.ejs %> ]
+        },
+        {
+            "predicates": [ <% include get-service-token/fail/internal_server_error_predicates.ejs %> ],
+            "responses": [ <% include get-service-token/fail/internal_server_error_response.ejs %> ]
+        },
+        {
+            "responses": [ <% include cognito-lotuss-proxy.ejs %> ]
+        }
+    ]
+}

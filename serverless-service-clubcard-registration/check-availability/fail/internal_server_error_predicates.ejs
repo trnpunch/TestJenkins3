@@ -1,0 +1,42 @@
+{
+    "and": [
+        {
+            "equals": 
+            {
+                "path": "/clubcard-registration/web/v1/customers/availability",
+                "method": "POST"
+            }
+        },
+        {
+            "or": [
+                {
+                    "matches": 
+                    {
+                        "body": 
+                        {
+                            "mobile_phone_no": "66nternal_error|66100000000|66650000003"
+                        }
+                    }
+                },
+                {
+                    "matches": 
+                    {
+                        "body": 
+                        {
+                            "mobile_phone_no": "internal_error|601117000002"
+                        }
+                    }
+                },
+                {
+                    "matches": 
+                    {
+                        "body": 
+                        {
+                            "citizen_id": "internal_error|1111111111111"
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+}

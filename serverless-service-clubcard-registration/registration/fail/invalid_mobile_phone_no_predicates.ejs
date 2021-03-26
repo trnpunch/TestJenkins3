@@ -1,0 +1,17 @@
+{
+    "and": [
+        {
+            "equals": {
+                "path": "/clubcard-registration/web/v2/customers",
+                "method": "POST"
+            }
+        },
+        {
+            "matches": {
+                "body": {
+                    "mobile_phone_no": "66nvalid|66000000000|invalid"
+                }
+            }
+        }
+    ]
+}

@@ -1,0 +1,17 @@
+{
+    "and": [
+        {
+            "equals": {
+                "path": "/reward-service/v1/clubcards/customers/balance",
+                "method": "POST"
+            }
+        },
+        {
+            "equals": {
+                "body": {                  
+                    "list_of_customer_uuid":[]                   
+                }
+            }             
+        }
+    ]
+}

@@ -1,0 +1,21 @@
+{
+    "and": [
+        {
+            "equals": {
+                "path": "/identity-api/auth/v1/service/token",
+                "method": "POST"
+            }
+        },
+        {
+            "and": [
+                {
+                    "equals": {
+                        "body": {
+                            "client_id": "internal_error"
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+}

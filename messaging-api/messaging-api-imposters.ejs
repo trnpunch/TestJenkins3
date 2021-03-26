@@ -1,0 +1,62 @@
+{
+    "port": "4002",
+    "protocol": "http",
+    "name": "messaging-api",
+    "stubs": [
+        {
+            "predicates": [ <% include send-sms/success/success_predicates.ejs %> ],
+            "responses": [ <% include send-sms/success/success_response.ejs %> ]
+        },
+        {
+            "predicates": [ <% include send-sms/fail/internal_server_error_predicates.ejs %> ],
+            "responses": [ <% include send-sms/fail/internal_server_error_response.ejs %> ]
+        },
+        {
+            "predicates": [ <% include send-sms/fail/invalid_message_to_send_predicates.ejs %> ],
+            "responses": [ <% include send-sms/fail/invalid_message_to_send_response.ejs %> ]
+        },
+        {
+            "predicates": [ <% include send-sms/fail/invalid_mobile_phone_no_predicates.ejs %> ],
+            "responses": [ <% include send-sms/fail/invalid_mobile_phone_no_response.ejs %> ]
+        },
+        {
+            "predicates": [ <% include send-otp/fail/invalid_mobile_phone_no_predicates.ejs %> ],
+            "responses": [ <% include send-otp/fail/invalid_mobile_phone_no_response.ejs %> ]
+        },
+        {
+            "predicates": [ <% include send-otp/fail/internal_server_error_predicates.ejs %> ],
+            "responses": [ <% include send-otp/fail/internal_server_error_response.ejs %> ]
+        },
+        {
+            "predicates": [ <% include send-otp/success/success_predicates.ejs %> ],
+            "responses": [ <% include send-otp/success/success_response.ejs %> ]
+        },
+        {
+            "predicates": [ <% include verify-otp/success/success_predicates.ejs %> ],
+            "responses": [ <% include verify-otp/success/success_response.ejs %> ]
+        },
+        {
+            "predicates": [ <% include verify-otp/fail/internal_server_error_predicates.ejs %> ],
+            "responses": [ <% include verify-otp/fail/internal_server_error_response.ejs %> ]
+        },
+        {
+            "predicates": [ <% include verify-otp/fail/otp_expired_predicates.ejs %> ],
+            "responses": [ <% include verify-otp/fail/otp_expired_response.ejs %> ]
+        },
+        {
+            "predicates": [ <% include verify-otp/fail/attempt_count_over_limits_predicates.ejs %> ],
+            "responses": [ <% include verify-otp/fail/attempt_count_over_limits_response.ejs %> ]
+        },
+        {
+            "predicates": [ <% include verify-otp/fail/otp_incorrect_predicates.ejs %> ],
+            "responses": [ <% include verify-otp/fail/otp_incorrect_response.ejs %> ]
+        },
+        {
+            "predicates": [ <% include verify-otp/fail/data_not_found_predicates.ejs %> ],
+            "responses": [ <% include verify-otp/fail/data_not_found_response.ejs %> ]
+        },
+        {
+            "responses": [ <% include messaging-api-proxy.ejs %> ]
+        }
+    ]
+}

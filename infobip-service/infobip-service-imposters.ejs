@@ -1,0 +1,18 @@
+{
+    "port": "4001",
+    "protocol": "http",
+    "name": "infobip",
+    "stubs": [
+        {
+            "predicates": [ <% include send-sms/success/success_predicates.ejs %> ],
+            "responses": [ <% include send-sms/success/success_response.ejs %> ]
+        },
+        {
+            "predicates": [ <% include send-sms/fail/internal_server_error_500_predicates.ejs %> ],
+            "responses": [ <% include send-sms/fail/internal_server_error_500_response.ejs %> ]
+        },
+        {
+            "responses": [ <% include infobip-service-proxy.ejs %> ]
+        }
+    ]
+}

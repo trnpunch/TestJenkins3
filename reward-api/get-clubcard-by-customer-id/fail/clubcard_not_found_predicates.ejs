@@ -1,0 +1,19 @@
+{
+    "and": [
+        {
+            "equals": {
+                "path": "/reward-service/v1/clubcards/customer/customer-id",
+                "method": "POST"
+            }
+        },
+        {
+            "matches": {
+                "body": {
+                    "customer_id": [
+                        ".*?"
+                    ]
+                }
+            }
+        }
+    ]
+}

@@ -1,0 +1,32 @@
+{
+    "and": [
+        {
+            "equals": {
+                "path": "/v1/external/accrual/retail",
+                "method": "POST"
+            }
+        },
+        {
+            "exists": {
+                "headers": {
+                    "Host": true,
+                    "X-Amz-Date": true,
+                    "Authorization": true
+                }
+            }
+        },
+        {
+            "matches": {
+                "body": {
+                    "memberId": "70000000000",
+                    "partnerCode": "TESCOTHA02",
+                    "amount": "700",
+                    "transactionDate": "20210309081512",
+                    "description": "Thai Tesco: Earn Points",
+                    "referenceNumber": "3b3b24d4-06c1-43cd-8c3f-07ba38b305a2",
+                    "partnerMID": "7741048901"
+                }
+            }
+        }
+    ]
+}

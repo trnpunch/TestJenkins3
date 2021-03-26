@@ -1,0 +1,35 @@
+{
+    "and": [
+        {
+            "equals": {
+                "path": "/clubcard-registration/web/v1/customers/availability",
+                "method": "POST"
+            }
+        },
+        {
+            "or": [
+                {
+                    "matches": {
+                        "body": {
+                            "mobile_phone_no": "66655194921|66655194927|66650000002"
+                        }
+                    }
+                },
+                {
+                    "matches": {
+                        "body": {
+                            "mobile_phone_no": "601117000376|601117000001"
+                        }
+                    }
+                },
+                {
+                    "matches": {
+                        "body": {
+                            "citizen_id": "1213141516177"
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+}

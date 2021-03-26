@@ -1,0 +1,39 @@
+{
+   "and":[
+      {
+           "equals":{
+               "path":"/v1/redemptions",
+               "method":"POST"
+           }
+      },
+      {
+         "or":[
+            {
+               "and": [
+                  {
+                     "matches":{
+                        "body":{
+                           "channel": "^app$|^online$"
+                        }
+                     }
+                  },
+               { 
+                  "equals": {
+                        "body":{
+                           "customerId":"17597781",
+                           "premiumId":"1054"
+                        }
+                     }
+                  }
+               ]
+            },{
+               "equals":{
+                  "body":{
+                     "channel": "mobile"
+                  }
+               }
+            }
+         ]
+      }
+   ]
+}

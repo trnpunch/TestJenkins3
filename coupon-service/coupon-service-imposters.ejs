@@ -1,0 +1,26 @@
+{
+    "port": "4010",
+    "protocol": "http",
+    "name": "coupon-service",
+    "stubs": [ 
+        {
+            "predicates": [ <% include assign-coupon-transactional/fail/internal_server_error_predicates.ejs %> ],
+            "responses": [ <% include assign-coupon-transactional/fail/internal_server_error_response.ejs %> ]
+        },
+        {
+            "predicates": [ <% include assign-coupon-transactional/success/success_predicates.ejs %> ],
+            "responses": [ <% include assign-coupon-transactional/success/success_response.ejs %> ]
+        },
+        {
+            "predicates": [ <% include assign-coupon-transactional/fail/coupon_not_found_predicates.ejs %> ],
+            "responses": [ <% include assign-coupon-transactional/fail/coupon_not_found_response.ejs %> ]
+        },
+        {
+            "predicates": [ <% include assign-coupon-transactional/fail/invalid_contact_predicates.ejs %> ],
+            "responses": [ <% include assign-coupon-transactional/fail/invalid_contact_response.ejs %> ]
+        },
+        {
+            "responses": [ <% include coupon-service-proxy.ejs %> ]
+        }
+    ]
+}

@@ -1,0 +1,21 @@
+{
+    "and": [
+        {
+            "equals": {
+                "path": "/messaging-api/auth/v1/verify-otp",
+                "method": "POST"
+            }
+        },
+        {
+            "and": [
+                {
+                    "equals": {
+                        "body": {
+                            "ref_code": "data_not_found"
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+}

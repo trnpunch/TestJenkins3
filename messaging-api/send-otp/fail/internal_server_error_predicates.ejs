@@ -1,0 +1,42 @@
+{
+    "and": [
+        {
+            "equals": {
+                "path": "/messaging-api/auth/v1/send-otp",
+                "method": "POST"
+            }
+        },
+        {
+            "or": [
+                {
+                    "equals": {
+                        "body": {
+                            "app_client_id": "internal_error"
+                        }
+                    }
+                },
+                {
+                    "equals": {
+                        "body": {
+                            "mobile_number": "66nternal_error|internal_error"
+                        }
+                    }
+                },
+                {
+                    "equals": {
+                        "body": {
+                            "mobile_number": "66650000002"
+                        }
+                    }
+                },
+                {
+                    "equals": {
+                        "body": {
+                            "mobile_number": "601117000001"
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+}

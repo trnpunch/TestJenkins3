@@ -1,0 +1,21 @@
+{
+    "and": [
+        {
+            "equals": {
+                "path": "/identity-api/auth/v1/otp/register-token",
+                "method": "POST"
+            }
+        },
+        {
+            "and": [
+                {
+                    "equals": {
+                        "body": {
+                            "otp": "otp_incorrect"
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+}

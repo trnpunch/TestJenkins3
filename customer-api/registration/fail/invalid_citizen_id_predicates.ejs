@@ -1,0 +1,17 @@
+{
+    "and": [
+        {
+            "equals": {
+                "path": "/customer-service/v1/customers/registration",
+                "method": "POST"
+            }
+        },
+        {
+            "matches": {
+                "body": {
+                    "citizen_id": "invalid|0000000000000"
+                }
+            }
+        }
+    ]
+}

@@ -1,0 +1,34 @@
+{
+    "port": "4008",
+    "protocol": "http",
+    "name": "serverless-service-latte",
+    "stubs": [ 
+        {
+            "predicates": [ <% include get-clubcard-by-phone/success/found_one_predicates.ejs %> ],
+            "responses": [ <% include get-clubcard-by-phone/success/found_one_response.ejs %> ]
+        },
+        {
+            "predicates": [ <% include get-clubcard-by-phone/success/found_multiple_predicates.ejs %> ],
+            "responses": [ <% include get-clubcard-by-phone/success/found_multiple_response.ejs %> ]
+        },
+        {
+            "predicates": [ <% include get-clubcard-by-phone/fail/internal_server_error_predicates.ejs %> ],
+            "responses": [ <% include get-clubcard-by-phone/fail/internal_server_error_response.ejs %> ]
+        },
+        {
+            "predicates": [ <% include get-clubcard-by-phone/fail/not_found_predicates.ejs %> ],
+            "responses": [ <% include get-clubcard-by-phone/fail/not_found_response.ejs %> ]
+        },
+        {
+            "predicates": [ <% include get-clubcard-by-phone/fail/invalid_phone_predicates.ejs %> ],
+            "responses": [ <% include get-clubcard-by-phone/fail/invalid_phone_response.ejs %> ]
+        },
+        {
+            "predicates": [ <% include get-clubcard-by-phone/fail/without_param_predicates.ejs %> ],
+            "responses": [ <% include get-clubcard-by-phone/fail/without_param_response.ejs %> ]
+        },
+        {
+            "responses": [ <% include serverless-service-latte-proxy.ejs %> ]
+        }
+    ]
+}

@@ -1,0 +1,17 @@
+{
+    "and": [
+        {
+            "equals": {
+                "path": "/customer-service/v1/customers/alternate-id",
+                "method": "POST"
+            }
+        },
+        {
+            "matches": {
+                "body": {
+                    "mobile_phone_no": "66nternal_error|66650000000"
+                }
+            }
+        }
+    ]
+}

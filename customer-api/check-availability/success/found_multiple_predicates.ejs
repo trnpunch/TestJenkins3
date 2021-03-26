@@ -1,0 +1,28 @@
+{
+    "and": [
+        {
+            "equals": {
+                "path": "/customer-service/v1/customers/availability",
+                "method": "POST"
+            }
+        },
+        {
+            "or": [
+                {
+                    "matches": {
+                        "body": {
+                            "mobile_phone_no": "66655194920"
+                        }
+                    }
+                },
+                {
+                    "matches": {
+                        "body": {
+                            "citizen_id": "2559193000377"
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+}

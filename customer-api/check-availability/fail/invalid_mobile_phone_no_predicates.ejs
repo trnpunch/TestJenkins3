@@ -1,0 +1,17 @@
+{
+    "and": [
+        {
+            "equals": {
+                "path": "/customer-service/v1/customers/availability",
+                "method": "POST"
+            }
+        },
+        {
+            "matches": {
+                "body": {
+                    "mobile_phone_no": "66nvalid|66000000000"
+                }
+            }
+        }
+    ]
+}

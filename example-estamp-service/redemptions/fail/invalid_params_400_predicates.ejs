@@ -1,0 +1,19 @@
+{
+    "and":[
+       {
+            "equals":{
+                "path":"/v1/redemptions",
+                "method":"POST"
+            }
+       },
+       {
+          "matches":{
+             "body":{
+                "channel":"app",
+                "customerId":"1001111",
+                "premiumId":"1011"
+             }
+          }
+       }
+    ]
+ }

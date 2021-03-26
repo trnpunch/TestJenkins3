@@ -1,0 +1,18 @@
+{
+    "and": [
+        {
+            "equals": {
+                "path": "/identity-api/auth/v1/service/token",
+                "method": "POST"
+            }
+        },
+        {
+            "equals": {
+                "body": {
+                    "client_id": "web-register-bff",
+                    "client_secret": "test"
+                }
+            }
+        }
+    ]
+}

@@ -1,0 +1,33 @@
+{
+    "and": [
+        {
+            "equals": 
+            {
+                "path": "/customer-service/v1/customers/registration",
+                "method": "POST"
+            }
+        },
+        {
+            "or": [
+                {
+                    "matches": 
+                    {
+                        "body": 
+                        {
+                            "mobile_phone_no": "66nternal_error|0699999999"
+                        }
+                    }
+                },
+                {
+                    "matches": 
+                    {
+                        "body": 
+                        {
+                            "citizen_id": "internal_error|1111111111111"
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+}

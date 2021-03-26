@@ -1,0 +1,19 @@
+{
+    "and": [
+        {
+            "equals": {
+                "path": "/oauth2/token",
+                "method": "POST"
+            }
+        },
+        {
+            "and": [
+                {
+                    "contains": {
+                        "body": "scope=web-app%2fforgot-clubcard"
+                    }
+                }
+            ]
+        }
+    ]
+}

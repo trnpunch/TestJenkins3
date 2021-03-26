@@ -1,0 +1,36 @@
+{
+    "is": {
+        "statusCode": 200,
+        "headers": {
+            "Content-Type": "application/json"
+        },
+    "body": {
+                "messages": [
+                    {
+                        "to": "${mobile_phone}",
+                        "status": {
+                            "groupId": 1,
+                            "groupName": "PENDING",
+                            "id": 26,
+                            "name": "PENDING_ACCEPTED",
+                            "description": "Message sent to next instance"
+                        },
+                        "messageId": "29825600084803573274"
+                    }
+                ]
+            }
+    },
+    "_behaviors": {
+    
+        "copy": [
+            {
+                "from": "body",
+                "into": "${mobile_phone}",
+                "using": {
+                    "method": "jsonpath",
+                    "selector": "$..to"
+                }
+            }
+        ]
+    }
+}

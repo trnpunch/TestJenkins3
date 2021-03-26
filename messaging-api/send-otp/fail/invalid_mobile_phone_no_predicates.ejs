@@ -1,0 +1,17 @@
+{
+    "and": [
+        {
+            "equals": {
+                "path": "/messaging-api/auth/v1/send-otp",
+                "method": "POST"
+            }
+        },
+        {
+            "matches": {
+                "body": {
+                    "mobile_number": "66nvalid|invalid"
+                }
+            }
+        }
+    ]
+}

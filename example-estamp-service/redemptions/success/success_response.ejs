@@ -1,0 +1,25 @@
+{
+    "is": {
+        "statusCode": 200,
+        "headers": {
+            "Content-Type": "application/json"
+        },
+    "body": {
+        "customerId": "${customer_id}",
+        "redemptionId": "42760334"
+        }
+    },
+    "_behaviors": {
+    
+        "copy": [
+            {
+                "from": "body",
+                "into": "${customer_id}",
+                "using": {
+                    "method": "jsonpath",
+                    "selector": "$..customerId"
+                }
+            }
+        ]
+    }
+}

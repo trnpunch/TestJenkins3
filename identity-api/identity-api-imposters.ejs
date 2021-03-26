@@ -1,0 +1,62 @@
+{
+    "port": "4004",
+    "protocol": "http",
+    "name": "identity-api",
+    "stubs": [
+        {
+            "predicates": [ <% include get-service-token/success/success_web_bff_predicates.ejs %> ],
+            "responses": [ <% include get-service-token/success/success_web_bff_response.ejs %> ]
+        },
+        {
+            "predicates": [ <% include get-service-token/success/success_pos_bff_predicates.ejs %> ],
+            "responses": [ <% include get-service-token/success/success_pos_bff_response.ejs %> ]
+        },
+        {
+            "predicates": [ <% include get-service-token/fail/internal_server_error_predicates.ejs %> ],
+            "responses": [ <% include get-service-token/fail/internal_server_error_response.ejs %> ]
+        },
+        {
+            "predicates": [ <% include verify-register-otp/success/success_predicates.ejs %> ],
+            "responses": [ <% include verify-register-otp/success/success_response.ejs %> ]
+        },
+        {
+            "predicates": [ <% include verify-register-otp/fail/otp_incorrect_predicates.ejs %> ],
+            "responses": [ <% include verify-register-otp/fail/otp_incorrect_response.ejs %> ]
+        },
+        {
+            "predicates": [ <% include verify-register-otp/fail/internal_server_error_predicates.ejs %> ],
+            "responses": [ <% include verify-register-otp/fail/internal_server_error_response.ejs %> ]
+        },
+        {
+            "predicates": [ <% include verify-customer-identity/fail/otp_incorrect_predicates.ejs %> ],
+            "responses": [ <% include verify-customer-identity/fail/otp_incorrect_response.ejs %> ]
+        },
+        {
+            "predicates": [ <% include verify-customer-identity/fail/internal_server_error_predicates.ejs %> ],
+            "responses": [ <% include verify-customer-identity/fail/internal_server_error_response.ejs %> ]
+        },
+        {
+            "predicates": [ <% include verify-customer-identity/success/success_customer_uuid_predicates.ejs %> ],
+            "responses": [ <% include verify-customer-identity/success/success_customer_uuid_response.ejs %> ]
+        },
+        {
+            "predicates": [ <% include verify-customer-identity/success/success_customer_uuid_2_predicates.ejs %> ],
+            "responses": [ <% include verify-customer-identity/success/success_customer_uuid_2_response.ejs %> ]
+        },
+        {
+            "predicates": [ <% include verify-customer-identity/success/success_one_customer_id_predicates.ejs %> ],
+            "responses": [ <% include verify-customer-identity/success/success_one_customer_id_response.ejs %> ]
+        },
+        {
+            "predicates": [ <% include verify-customer-identity/fail/fail_multi_customer_id_predicates.ejs %> ],
+            "responses": [ <% include verify-customer-identity/fail/fail_multi_customer_id_response.ejs %> ]
+        },
+        {
+            "predicates": [ <% include verify-customer-identity/fail/customer_not_found_predicates.ejs %> ],
+            "responses": [ <% include verify-customer-identity/fail/customer_not_found_response.ejs %> ]
+        },
+        {
+            "responses": [ <% include identity-api-proxy.ejs %> ]
+        }
+    ]
+}

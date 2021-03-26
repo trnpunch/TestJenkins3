@@ -1,0 +1,42 @@
+{
+    "port": "4005",
+    "protocol": "http",
+    "name": "reward-api",
+    "stubs": [
+        {
+            "predicates": [ <% include point-balance-by-listcustomer/success/found_point_predicates.ejs %> ],
+            "responses": [ <% include point-balance-by-listcustomer/success/found_point_response.ejs %> ]
+        },
+        {
+            "predicates": [ <% include point-balance-by-listcustomer/fail/internal_server_error_predicates.ejs %> ],
+            "responses": [ <% include point-balance-by-listcustomer/fail/internal_server_error_response.ejs %> ]
+        },
+        {
+            "predicates": [ <% include get-clubcard/success/success_predicates.ejs %> ],
+            "responses": [ <% include get-clubcard/success/success_response.ejs %> ]
+        },
+        {
+            "predicates": [ <% include get-clubcard/fail/internal_server_error_predicates.ejs %> ],
+            "responses": [ <% include get-clubcard/fail/internal_server_error_response.ejs %> ]
+        },
+        {
+            "predicates": [ <% include get-clubcard/fail/clubcard_not_found_predicates.ejs %> ],
+            "responses": [ <% include get-clubcard/fail/clubcard_not_found_response.ejs %> ]
+        },
+        {
+            "predicates": [ <% include get-clubcard-by-customer-id/success/success_predicates.ejs %> ],
+            "responses": [ <% include get-clubcard-by-customer-id/success/success_response.ejs %> ]
+        },
+        {
+            "predicates": [ <% include get-clubcard-by-customer-id/fail/internal_server_error_predicates.ejs %> ],
+            "responses": [ <% include get-clubcard-by-customer-id/fail/internal_server_error_response.ejs %> ]
+        },
+        {
+            "predicates": [ <% include get-clubcard-by-customer-id/fail/clubcard_not_found_predicates.ejs %> ],
+            "responses": [ <% include get-clubcard-by-customer-id/fail/clubcard_not_found_response.ejs %> ]
+        },
+        {
+            "responses": [ <% include reward_api_proxy.ejs %> ]
+        }
+    ]
+}

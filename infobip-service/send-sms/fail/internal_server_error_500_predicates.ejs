@@ -1,0 +1,25 @@
+{
+    "and": [
+        {
+            "equals": {
+                "path": "/sms/2/advanced",
+                "method": "POST"
+            }
+        },
+        {
+            "equals": {
+                "body": {
+                    "messages": [
+                        {
+                            "destinations": [
+                                {
+                                    "to": "66655194920"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

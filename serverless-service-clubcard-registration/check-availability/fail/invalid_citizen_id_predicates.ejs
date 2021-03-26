@@ -1,0 +1,17 @@
+{
+    "and": [
+        {
+            "equals": {
+                "path": "/clubcard-registration/web/v1/customers/availability",
+                "method": "POST"
+            }
+        },
+        {
+            "matches": {
+                "body": {
+                    "citizen_id": "invalid|0000000000000"
+                }
+            }
+        }
+    ]
+}

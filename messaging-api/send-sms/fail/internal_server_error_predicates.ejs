@@ -1,0 +1,28 @@
+{
+    "and": [
+        {
+            "equals": {
+                "path": "/messaging-api/messaging/v1/send-sms",
+                "method": "POST"
+            }
+        },
+        {
+            "or": [
+                {
+                    "equals": {
+                        "body": {
+                            "mobile_number": "66nternal_error|66650000002"
+                        }
+                    }
+                },
+                {
+                    "equals": {
+                        "body": {
+                            "mobile_number": "601117000001|internal_error"
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+}

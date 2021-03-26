@@ -1,0 +1,74 @@
+{
+    "port": "4003",
+    "protocol": "http",
+    "name": "customer-api",
+    "stubs": [
+        {
+            "predicates": [ <% include check-availability/success/available_predicates.ejs %> ],
+            "responses": [ <% include check-availability/success/available_response.ejs %> ]
+        }, 
+        {
+            "predicates": [ <% include check-availability/success/found_one_predicates.ejs %> ],
+            "responses": [ <% include check-availability/success/found_one_response.ejs %> ]
+        },
+        {
+            "predicates": [ <% include check-availability/success/found_multiple_predicates.ejs %> ],
+            "responses": [ <% include check-availability/success/found_multiple_response.ejs %> ]
+        },
+        {
+            "predicates": [ <% include check-availability/fail/internal_server_error_predicates.ejs %> ],
+            "responses": [ <% include check-availability/fail/internal_server_error_response.ejs %> ]
+        },
+        {
+            "predicates": [ <% include check-availability/fail/invalid_citizen_id_predicates.ejs %> ],
+            "responses": [ <% include check-availability/fail/invalid_citizen_id_response.ejs %> ]
+        },
+        {
+            "predicates": [ <% include check-availability/fail/invalid_mobile_phone_no_predicates.ejs %> ],
+            "responses": [ <% include check-availability/fail/invalid_mobile_phone_no_response.ejs %> ]
+        },
+        {
+            "predicates": [ <% include check-availability/fail/without_param_predicates.ejs %> ],
+            "responses": [ <% include check-availability/fail/without_param_response.ejs %> ]
+        },
+        {
+            "predicates": [ <% include registration/success/success_predicates.ejs %> ],
+            "responses": [ <% include registration/success/success_response.ejs %> ]
+        }, 
+        {
+            "predicates": [ <% include registration/fail/already_register_predicates.ejs %> ],
+            "responses": [ <% include registration/fail/already_register_response.ejs %> ]
+        },
+        {
+            "predicates": [ <% include registration/fail/internal_server_error_predicates.ejs %> ],
+            "responses": [ <% include registration/fail/internal_server_error_response.ejs %> ]
+        },
+        {
+            "predicates": [ <% include registration/fail/invalid_citizen_id_predicates.ejs %> ],
+            "responses": [ <% include registration/fail/invalid_citizen_id_response.ejs %> ]
+        },
+        {
+            "predicates": [ <% include registration/fail/invalid_mobile_phone_no_predicates.ejs %> ],
+            "responses": [ <% include registration/fail/invalid_mobile_phone_no_response.ejs %> ]
+        },
+        {
+            "predicates": [ <% include get-customer-by-mobile-phone-no/success/success_predicates.ejs %> ],
+            "responses": [ <% include get-customer-by-mobile-phone-no/success/success_response.ejs %> ]
+        },
+        {
+            "predicates": [ <% include get-customer-by-mobile-phone-no/success/success_multiple_predicates.ejs %> ],
+            "responses": [ <% include get-customer-by-mobile-phone-no/success/success_multiple_response.ejs %> ]
+        },
+        {
+            "predicates": [ <% include get-customer-by-mobile-phone-no/fail/internal_server_error_predicates.ejs %> ],
+            "responses": [ <% include get-customer-by-mobile-phone-no/fail/internal_server_error_response.ejs %> ]
+        },
+        {
+            "predicates": [ <% include get-customer-by-mobile-phone-no/fail/not_found_predicates.ejs %> ],
+            "responses": [ <% include get-customer-by-mobile-phone-no/fail/not_found_response.ejs %> ]
+        },
+        {
+            "responses": [ <% include customer_api_proxy.ejs %> ]
+        }
+    ]
+}
